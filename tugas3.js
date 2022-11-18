@@ -1,30 +1,23 @@
-function arrayCheck(firstValue, lastValue, arrayData){
-    for (let i = 0; i <= arrayData.length; i++)
-    
-    while (arrayData.length < 5){
-        console.log("jumlah data kurang")
-        if(arrayData[i] === firstValue && arrayData[i] === lastValue ){
-            console.log("tidak ada data")
-            break;
+function arrayCheck(firstValue, lastValue, arrayData){  
+    let arrayDataBetween = []
+    if (firstValue < lastValue) {
+        if (arrayData.length > 5) {
+            for (let i=0; i < arrayData.length; i++) {
+                if (arrayData[i] > firstValue && arrayData[i] < lastValue) {
+                    arrayDataBetween.push(arrayData[i])
+                }
+            }
+            if (arrayDataBetween.length !== 0) {
+                console.log(arrayDataBetween.sort())
+            } else {
+                console.log("Nilai tidak ditemukan")
+            }
+        } else {
+            console.log("Jumlah angka dalam dataArray harus lebih dari 5")
         }
-            else if (firstValue < lastValue){
-                return arrayData.sort()
-            }  else {
-                console.log("Nilai akhir harus lebih besar dari nilai awal")
-            }      
-    }
-    
-
-    // if (firstValue < lastValue){
-    //     return arrayData.sort()
-    // } else {
-    //     console.log("nilai akhir harus lebih besar dari nilai awal")
-    // }
-
+    } else {
+        console.log("Nilai akhir harus lebih besar dari nilai awal")
+    }  
   
-
-
-}
-console.log(arrayCheck(5 , 6, [1,2,3,5]));
-
-    
+ } 
+ arrayCheck(1, 8, [11,12,13,14,19,20]);
