@@ -1,10 +1,11 @@
 function arrayCheck(firstValue, lastValue, arrayData){
     for (let i = 0; i <= arrayData.length; i++)
     
-    if (arrayData.length < 5){
+    while (arrayData.length < 5){
         console.log("jumlah data kurang")
         if(arrayData[i] === firstValue && arrayData[i] === lastValue ){
             console.log("tidak ada data")
+            break;
         }
             else if (firstValue < lastValue){
                 return arrayData.sort()
